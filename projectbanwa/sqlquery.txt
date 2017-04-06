@@ -1,0 +1,52 @@
+--create table stock_report
+--(
+--symbol varchar(20) primary key,
+--company_name varchar(200),
+--ticker float(5),
+--volume float(10),
+--prev_close float(5)
+--);
+--
+--
+--create table banwali_abc
+--(
+--symbol varchar(20) primary key,
+--company_name varchar(200),
+--ticker float(5),
+--volume float(10),
+--prev_close float(5)
+--);
+
+
+create table abc1
+(
+symbol varchar2(10),
+value1 int
+);
+insert into abc11 values('ddd',10);
+select * from abc11;
+
+alter table abc1 
+add primary key(symbol);
+
+create table abc11
+(
+symbol varchar2(10) primary key,
+value1 int
+);
+
+insert into abc11 values(?,?)
+
+create or replace procedure insertuser(symbol1 in varchar,value11 in integer)
+is
+BEGIN
+  INSERT INTO abc11 (symbol, value1) VALUES (symbol1,value11);
+EXCEPTION
+  WHEN DUP_VAL_ON_INDEX THEN
+    UPDATE abc11
+    SET    value1= value11
+    WHERE symbol=symbol1;
+END;
+/
+
+select * from abc11;
